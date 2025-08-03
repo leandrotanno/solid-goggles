@@ -86,7 +86,7 @@ const TannoOnline: React.FC = () => {
       {/* Copyright */}
       <div className="fixed bottom-6 left-6 md:bottom-8 md:left-8">
         <p className="text-sm text-white/50 hover:text-white/80 transition-colors">
-          © 2025 Leandro Tanno
+          © 2025 Leandro Tanno - Feito com 🤬 + ☕ + 🌿 + 🍔
         </p>
       </div>
     </div>
