@@ -9,15 +9,20 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ profileData }) => {
   return (
     <header className="relative dark:bg-gradient-to-br dark:from-gray-800 dark:via-gray-900 dark:to-black bg-gradient-to-br from-purple-50 via-white to-gray-50 overflow-hidden print:bg-white">
-      <div className="absolute inset-0 bg-grid-white/5 dark:opacity-100 opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent dark:opacity-100 opacity-50"></div>
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-16 sm:py-20">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
           {/* Profile Photo */}
           <div className="relative group">
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 p-1">
-              <div className="w-full h-full rounded-full dark:bg-gray-800 bg-white flex items-center justify-center dark:text-gray-400 text-gray-600">
-                <span className="text-sm">Sua foto aqui</span>
-              </div>
+              <img 
+                src="/avatar.jpg" 
+                alt="Leandro Tanno" 
+                className="w-full h-full rounded-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://ui-avatars.com/api/?name=Leandro+Tanno&size=160&background=7c3aed&color=fff';
+                }}
+              />
             </div>
             <div className="absolute inset-0 rounded-full bg-purple-500/20 blur-xl group-hover:bg-purple-500/30 transition-all duration-300"></div>
           </div>
