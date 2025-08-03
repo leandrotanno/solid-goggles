@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animação do gradiente */
+@keyframes gradient-shift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-5%, -5%) scale(1.1); }
+  50% { transform: translate(5%, -5%) scale(1.05); }
+  75% { transform: translate(-5%, 5%) scale(1.08); }
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 20s ease-in-out infinite;
+}
+
+/* Grid pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.bg-grid-white\/5 {
+  background-image: 
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Estilos de impressão globais */
+@media print {
+  /* Configurações gerais */
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+  
+  /* Reset global para impressão */
+  *,
+  *::before,
+  *::after {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Body e HTML */
+  html,
+  body {
+    background-color: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Remove classes dark mode */
+  .dark {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  /* Títulos */
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  
+  /* Parágrafos e conteúdo */
+  p, li {
+    color: black !important;
+  }
+  
+  /* Links */
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+  
+  /* Remove elementos de navegação */
+  nav,
+  button,
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  /* Cards e containers */
+  section {
+    page-break-inside: avoid;
+  }
+  
+  /* Ajusta espaçamentos */
+  .mb-20 {
+    margin-bottom: 2rem !important;
+  }
+  
+  /* Remove backgrounds coloridos */
+  [class*="bg-purple"],
+  [class*="bg-blue"],
+  [class*="bg-green"],
+  [class*="bg-yellow"],
+  [class*="bg-red"],
+  [class*="bg-gray-8"],
+  [class*="bg-gray-9"],
+  [class*="dark:bg"] {
+    background-color: white !important;
+  }
+  
+  /* Bordas suaves */
+  [class*="border"] {
+    border-color: #d1d5db !important;
+  }
+  
+  /* Tags e badges */
+  [class*="bg-purple"][class*="/20"],
+  [class*="bg-purple-100"] {
+    background-color: #f3f4f6 !important;
+    color: #374151 !important;
+  }
+}

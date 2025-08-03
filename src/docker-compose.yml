@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build: .
+    container_name: portfolio-tanno
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
